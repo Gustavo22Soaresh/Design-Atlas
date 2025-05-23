@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="foudantion.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=favorite" />
+<style>
+    
+.pagination {
+    display: flex;
+    gap: 10px;
+}
+
+.border {
+    width: 34px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-4);
+}
+
+.pagination a {
+    color: var(--color-base);
+    text-decoration: none;
+    width: 28px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-4);
+}
+
+.pagination a:hover {
+    background-color: var(--bgn-surface-hover);
+}
+
+.pagination a.active {
+    background-color: var(--color-accent-active);
+    color: var(--color-inverse);
+    
+    &:hover {
+        background-color: var(--bgn-accent-hover);
+    }
+  
+}
+
+.pagination a.disable {
+	color: var(--color-disable);
+        pointer-events: none;
+    }
+
+.border:focus-within {
+  border-color: var(--bgn-accent);
+}
+
+</style>
+</head>
+<body>
+
+<h2>Pagination</h2>
+
+<div class="pagination">
+  <div class="border">
+    <a href="#">
+      <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.95833 8L9.08333 14.125C9.29167 14.3333 9.39236 14.5764 9.38542 14.8542C9.37847 15.1319 9.27083 15.375 9.0625 15.5833C8.85417 15.7917 8.61111 15.8958 8.33333 15.8958C8.05556 15.8958 7.8125 15.7917 7.60417 15.5833L1.1875 9.1875C1.02083 9.02083 0.895833 8.83333 0.8125 8.625C0.729167 8.41667 0.6875 8.20833 0.6875 8C0.6875 7.79167 0.729167 7.58333 0.8125 7.375C0.895833 7.16667 1.02083 6.97917 1.1875 6.8125L7.60417 0.395834C7.8125 0.1875 8.05903 0.0868059 8.34375 0.0937503C8.62847 0.100695 8.875 0.208334 9.08333 0.416667C9.29167 0.625 9.39583 0.868056 9.39583 1.14583C9.39583 1.42361 9.29167 1.66667 9.08333 1.875L2.95833 8Z" fill="var(--color-base)"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="border"><a href="#">1</a></div>
+  <div class="border"><a href="#" class="active">2</a></div>
+  <div class="border"><a href="#" class="disable">3</a></div>
+
+  <div class="border">
+    <a href="#">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="mask0_925_4429" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+          <rect width="20" height="20" fill="#D9D9D9"/>
+        </mask>
+        <g mask="url(#mask0_925_4429)">
+          <path d="M12.0416 10.0001L5.91665 3.87512C5.70831 3.66679 5.60762 3.42373 5.61456 3.14595C5.62151 2.86818 5.72915 2.62512 5.93748 2.41679C6.14581 2.20845 6.38887 2.10429 6.66665 2.10429C6.94443 2.10429 7.18748 2.20845 7.39581 2.41679L13.8125 8.81262C13.9791 8.97929 14.1041 9.16679 14.1875 9.37512C14.2708 9.58345 14.3125 9.79179 14.3125 10.0001C14.3125 10.2085 14.2708 10.4168 14.1875 10.6251C14.1041 10.8335 13.9791 11.021 13.8125 11.1876L7.39581 17.6043C7.18748 17.8126 6.94095 17.9133 6.65623 17.9064C6.37151 17.8994 6.12498 17.7918 5.91665 17.5835C5.70831 17.3751 5.60415 17.1321 5.60415 16.8543C5.60415 16.5765 5.70831 16.3335 5.91665 16.1251L12.0416 10.0001Z" fill="var(--color-base)"/>
+        </g>
+      </svg>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
