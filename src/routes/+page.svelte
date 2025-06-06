@@ -4,6 +4,7 @@
 	import AtlTextInput from '$lib/components/atl-textInput.svelte';
 	import AtlLabel from '$lib/components/atl-label.svelte';
 	import AtlField from '$lib/components/atl-field.svelte';
+	import AtlAlert from '$lib/components/atl-alert.svelte';
 </script>
 
 <h1>Welcome to your library project</h1>
@@ -13,6 +14,7 @@
 <AtlButton>buton</AtlButton>
 <AtlCheckbox>checkbox</AtlCheckbox>
 <AtlField />
+<AtlAlert>Teste</AtlAlert>
 
 <style>
 </style>
