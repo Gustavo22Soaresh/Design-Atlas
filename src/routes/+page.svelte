@@ -15,10 +15,10 @@
 		<AtlButton>buton</AtlButton>
 		<AtlCheckbox>Checkbox</AtlCheckbox>
 		<AtlLabel 
+			label="text of the label"
 			showDescription=true 
 			description="description text is massive" 
-			type=required 
-			label="text of the label"
+			optional=true
 		/>
 		<AtlTextInput />
 		

@@ -1,27 +1,33 @@
 <script>
-	export let id = ''; // mesmo ID usado no <input>
+	export let inputId = '';
 	export let label = 'Label';
-	export let type = '';
 	export let description = '';
 	export let showDescription = false;
 
-	$: isRequired = type === 'required';
-	$: isOptional = type === 'optional';
+	export let required = false;
+	export let optional = false;
+	export let optionalFlag = "(optional)";
+
 </script>
 
 <div class="atl-label">
-	<label for={id}>
+	<label for={inputId}>
 		{label}
-		{#if isRequired}
+
+		{#if required}
 			<span aria-hidden="true" style="color: var(--red-500);">*</span>
 		{/if}
-		{#if isOptional}
-			<span class="label regular color-subtle">(opcional)</span>
+
+		{#if optional}
+			<span class="label regular color-subtle"> {optionalFlag} </span>
 		{/if}
 	</label>
 
 	{#if showDescription && description}
-		<span class="label regular color-subtle" id={`${id}-description`}>
+		<span
+			class="label regular color-subtle"
+			id={`descriptionId`}
+		>
 			{description}
 		</span>
 	{/if}
@@ -29,6 +35,7 @@
 
 <style>
 	@import url(../../style/global.css);
+
 	.atl-label {
 		display: flex;
 		flex-direction: column;
@@ -36,3 +43,4 @@
 		width: fit-content;
 	}
 </style>
+
