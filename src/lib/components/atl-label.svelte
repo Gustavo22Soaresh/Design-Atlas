@@ -1,78 +1,38 @@
 <script>
-	export let state = 'required';
-	export let showDescription = true;
+	export let id = ''; // mesmo ID usado no <input>
 	export let label = 'Label';
-	export let description = 'Description';
+	export let type = '';
+	export let description = '';
+	export let showDescription = false;
 
-	$: isRequired = state === 'required';
-	$: isOptional = state === 'optional';
+	$: isRequired = type === 'required';
+	$: isOptional = type === 'optional';
 </script>
 
-<div class="atl-label-container">
-	<span class="atl-label-text">
+<div class="atl-label">
+	<label for={id}>
 		{label}
 		{#if isRequired}
-			<span class="required">*</span>
+			<span aria-hidden="true" style="color: var(--red-500);">*</span>
 		{/if}
 		{#if isOptional}
-			<span class="optional">(opcional)</span>
+			<span class="label regular color-subtle">(opcional)</span>
 		{/if}
-	</span>
+	</label>
 
 	{#if showDescription && description}
-		<span class="atl-label-description">{description}</span>
+		<span class="label regular color-subtle" id={`${id}-description`}>
+			{description}
+		</span>
 	{/if}
 </div>
 
 <style>
-	.atl-label-container {
+	@import url(../../style/global.css);
+	.atl-label {
 		display: flex;
 		flex-direction: column;
-		gap: var(--spacing-4);
-		width: 119px;
-		height: 20px;
-	}
-
-	.atl-label-text {
-		display: flex;
-		flex-direction: row;
-		gap: 4px;
-		width: 42px;
-		height: 20px;
-		font-family: Inter;
-		font-weight: var(--typography-font-weight-regular);
-		font-size: var(--typography-font-size-16);
-		line-height: 125%;
-		letter-spacing: 0%;
-		vertical-align: middle;
-		background: var(--color-emphasized);
-	}
-	.required {
-		color: var(--bgn-danger);
-	}
-	.optional {
-		width: 73px;
-		height: 20px;
-		font-family: Inter;
-		font-weight: var(--typography-font-weight-regular);
-		font-size: var(--typography-font-size-16);
-		color: var(--color-base);
-		line-height: 125%;
-		letter-spacing: 0%;
-		vertical-align: middle;
-	}
-
-	.atl-label-description {
-		width: 65px;
-		height: 17px;
-		font-family: Inter;
-		font-weight: var(--typography-font-weight-regular);
-		font-size: var(--typography-font-size-14);
-		font-weight: var(--typography-font-weight-regular);
-		font-size: var(--typography-font-size-12);
-		color: var(--color-base);
-		line-height: 140%;
-		letter-spacing: 0%;
-		vertical-align: middle;
+		gap: 0px;
+		width: fit-content;
 	}
 </style>

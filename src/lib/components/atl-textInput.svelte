@@ -36,6 +36,7 @@
 <div class="atl-field-wrapper {status} {state}">
 	{#if iconLeft}
 		<span class="icon left">
+			<!-- e se eu quiser usar outro icone que não seja esse?-->
 			<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
 				<path
 					d="M12 12C10.9 12 9.95833 11.6083 9.175 10.825C8.39167 10.0417 8 9.1 8 8C8 6.9 8.39167 5.95833 9.175 5.175C9.95833 4.39167 10.9 4 12 4C13.1 4 14.0417 4.39167 14.825 5.175C15.6083 5.95833 16 6.9 16 8C16 9.1 15.6083 10.0417 14.825 10.825C14.0417 11.6083 13.1 12 12 12ZM4 18V17.2C4 16.6333 4.14583 16.1125 4.4375 15.6375C4.72917 15.1625 5.11667 14.8 5.6 14.55C6.63333 14.0333 7.68333 13.6458 8.75 13.3875C9.81667 13.1292 10.9 13 12 13C13.1 13 14.1833 13.1292 15.25 13.3875C16.3167 13.6458 17.3667 14.0333 18.4 14.55C18.8833 14.8 19.2708 15.1625 19.5625 15.6375C19.8542 16.1125 20 16.6333 20 17.2V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20H6C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18Z"
@@ -73,11 +74,13 @@
 
 <style>
 	.atl-field-wrapper {
+		/* padronizar se é wrapper ou container */
 		position: relative;
 		display: inline-flex;
 		align-items: center;
-		width: 200px;
-		height: 40px;
+		width: 100%;
+		max-width: var(--size-416);
+		height: var(--size-40);
 	}
 
 	input {
@@ -86,31 +89,29 @@
 		box-sizing: border-box;
 		border: var(--border-width-04) solid var(--border-color-base);
 		border-radius: var(--border-radius-4);
-		background-color: var(--color-base-transparent);
-		font-weight: var(--typography-font-weight-regular);
-		font-size: var(--typography-font-size-16);
-		line-height: 125%;
+		background-color: transparent;
+		font-size: var(--font-size-16);
+		line-height: var(--line-height-label);
 		transition: padding 0.2s ease;
-	}
 
-	input:hover {
-		background: var(--colors-base-transparent);
-		border: 1px solid var(--border-color-accent);
-	}
+		&:hover {
+			border: var(--border-width-1) solid var(--border-color-accent);
+		}
 
-	input:focus {
-		border: 2px solid var(--border-color-focus);
+		&:focus {
+			border: var(--border-width-2) solid var(--border-color-focus);
+		}
 	}
 
 	input.empty-disabled {
 		background: var(--bgn-base);
-		border-top: 0.4px solid var(--border-color-base);
+		border-top: var(--border-width-04) solid var(--border-color-base);
 	}
 
 	input.filled-disabled {
 		background: var(--bgn-base);
 		color: var(--color-base-hover);
-		border-top: 0.4px solid var(--border-color-base);
+		border-top: var(--border-width-04) solid var(--border-color-base);
 	}
 
 	input.success {
@@ -129,15 +130,19 @@
 		align-items: center;
 		justify-content: center;
 		width: 24px;
-		height: 24px;
+		height: 24px; /* devemos criar a variavel --icon-size-**) */
 		pointer-events: none;
 	}
 
 	.icon.left {
-		left: 8px;
+		left: 8px; /* var (--spacing-8) */
 	}
 
 	.icon.right {
 		right: 8px;
+	}
+
+	:focus {
+		outline: none;
 	}
 </style>

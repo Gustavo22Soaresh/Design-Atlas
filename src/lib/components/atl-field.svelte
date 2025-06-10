@@ -14,8 +14,8 @@
 	export let inputType = 'default';
 	export let status = 'default';
 	export let inputState = 'not filled';
-	export let iconLeft = false;
-	export let iconRight = false;
+	export let iconLeft = true;
+	export let iconRight = true;
 	export let placeholder = 'Placeholder';
 	export let value = '';
 </script>
