@@ -22,7 +22,7 @@
 			label="text of the label"
 		/>
 		<AtlTextInput />
-		<AtlAlert>Ola</AtlAlert>
+		<AtlAlert>A simple primary alert—check it out!</AtlAlert>
 	</div>
 </div>
 

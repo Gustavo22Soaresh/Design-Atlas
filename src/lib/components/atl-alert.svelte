@@ -1,7 +1,7 @@
 <script>
 	export let type = 'inline';
-	export let state = 'info';
-	export let close = true;
+	export let state = 'error';
+	export let close = false;
 	export let title = true;
 	export let titleText = 'Title';
 
@@ -16,7 +16,7 @@
 	};
 
 	$: iconMarkup = icons[state] || '';
-	$: iconMarkupClose = icons[close] || '';
+	$: iconMarkupClose = icons[close] || '×';
 	$: showTitle = !(type === 'inline');
 	$: contentColorClass =
 		type === 'inline' && (state === 'success' || state === 'error')
@@ -46,8 +46,8 @@
 			</div>
 		</div>
 
-		{#if close}
-			<button class="atl-alert-close" on:click={handleClose}>×</button>
+		{#if close && type != 'inline'}
+			<button class="atl-alert-close" on:click={handleClose}>{iconMarkupClose}</button>
 		{/if}
 	</div>
 {/if}
@@ -55,6 +55,7 @@
 <style>
 	@import url(../../style/global.css);
 	.atl-alert {
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
@@ -62,7 +63,8 @@
 		height: auto;
 		gap: var(--spacing-4);
 		border-radius: var(--border-radius-4);
-		padding: var(--spacing-16) var(--spacing-16) var(--spacing-16) var(--spacing-8);
+		padding: var(--spacing-16) var(--spacing-16) var(--spacing-8) var(--spacing-8);
+		padding-right: var(--spacing-24);
 		border-width: var(--border-width-1);
 		border-style: solid;
 		box-sizing: border-box;
@@ -117,17 +119,17 @@
 
 	.atl-alert.success {
 		background: var(--bgn-success);
-		border-top: 1px solid var(--border-color-success);
+		border: 1px solid var(--border-color-success);
 	}
 
 	.atl-alert.warning {
 		background: var(--bgn-warning);
-		border-top: 1px solid var(--border-color-warning);
+		border: 1px solid var(--border-color-warning);
 	}
 
 	.atl-alert.error {
 		background: var(--bgn-error);
-		border-top: 1px solid var(--border-color-error);
+		border: 1px solid var(--border-color-error);
 	}
 
 	.atl-alert-content {
@@ -149,13 +151,14 @@
 	}
 
 	.atl-alert-close {
+		position: absolute;
+		top: var(--spacing-4);
+		right: var(--spacing-4);
 		background: none;
 		border: none;
-		font-size: 16px;
+		font-size: 24px;
 		cursor: pointer;
 		color: var(--color-typo-secondary);
-		padding: 0;
-		margin-left: var(--spacing-8);
 	}
 
 	.atl-alert-children-content {
@@ -169,7 +172,7 @@
 		color: var(--color-base);
 	}
 	.atl-alert.inline {
-		width: 234px;
+		width: auto;
 		height: 20px;
 		border-radius: var(--border-radius-4);
 		border-width: var(--border-width-1);
