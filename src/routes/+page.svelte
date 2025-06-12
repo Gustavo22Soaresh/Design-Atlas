@@ -19,7 +19,9 @@
 			showDescription=true 
 			description="description text is massive" 
 			optional=true
-		/>
+		> 
+		text
+		</AtlLabel>
 		<AtlTextInput />
 		
 	</div>

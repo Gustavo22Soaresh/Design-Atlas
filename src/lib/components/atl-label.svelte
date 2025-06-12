@@ -12,7 +12,7 @@
 
 <div class="atl-label">
 	<label for={inputId}>
-		{label}
+		<slot />
 
 		{#if required}
 			<span aria-hidden="true" style="color: var(--red-500);">*</span>
@@ -26,7 +26,7 @@
 	{#if showDescription && description}
 		<span
 			class="label regular color-subtle"
-			id={`descriptionId`}
+			id={`${inputId}-description`}
 		>
 			{description}
 		</span>
