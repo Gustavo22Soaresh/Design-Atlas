@@ -1,21 +1,14 @@
 <script>
 	// Valor do textarea (bind:value)
 	export let value = '';
-	// Placeholder exibido quando vazio
 	export let placeholder = 'Placeholder';
-	// Desabilita o textarea
 	export let disabled = false;
-	// Torna o textarea somente leitura
 	export let readonly = false;
-	// Status visual: 'default', 'error' ou 'success'
 	export let status = 'default';
-	// Permite ou não redimensionar o textarea
 	export let resizable = true;
 	// Direção do redimensionamento (se permitido)
 	export let resize = 'both'; // 'none', 'vertical', 'horizontal', 'both'
-	// Número de linhas iniciais
 	export let rows = 3;
-	// Largura e altura em pixels
 	export let width = 416;
 	export let height = 208;
 
@@ -51,12 +44,6 @@ O tamanho é controlado por width/height e o resize pode ser desabilitado por pr
 
 <style>
 
-.atl-textarea-field {
-	display: flex;
-	/* width e height agora são controlados via props no textarea */
-	max-width: var(--size-416);
-}
-
 textarea {
 	box-sizing: border-box;
 	border: var(--border-width-1) solid var(--border-color-base);
@@ -88,7 +75,5 @@ textarea:disabled {
 	background: var(--bgn-base);
 	cursor: not-allowed;
 }
-
-
 
 </style>
