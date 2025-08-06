@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	type Status = 'default' | 'success' | 'error';
 	type Resize = 'none' | 'vertical' | 'horizontal' | 'both';
 
@@ -12,18 +14,33 @@
 	export let rows: number = 3;
 	export let width: number = 416;
 	export let height: number = 208;
+	export let autosize: boolean = false;
+
+	let textareaEl: HTMLTextAreaElement;
 
 	$: isSuccess = status === 'success';
 	$: isError = status === 'error';
 
+	function resizeToFit() {
+		if (!autosize || !textareaEl) return;
+		textareaEl.style.height = 'auto';
+		textareaEl.style.height = `${textareaEl.scrollHeight}px`;
+	}
+
 	function handleInput(event: Event) {
 		const target = event.target as HTMLTextAreaElement;
 		value = target.value;
+		resizeToFit();
 	}
+
+	onMount(() => {
+		if (autosize) resizeToFit();
+	});
 </script>
 
 <div class="atl-textarea-field {status}" aria-roledescription="Text Area">
 	<textarea
+		bind:this={textareaEl}
 		bind:value
 		placeholder={placeholder}
 		{disabled}
@@ -31,10 +48,15 @@
 		rows={rows}
 		class:success={isSuccess}
 		class:error={isError}
-		style="resize: {resizable ? resize : 'none'}; width: {width}px; height: {height}px;"
 		on:input={handleInput}
+		style="
+			resize: {autosize ? 'none' : resizable ? resize : 'none'};
+			width: {width}px;
+			{!autosize ? `height: ${height}px;` : ''}
+		"
 	></textarea>
 </div>
+
 
 <style>
 textarea {

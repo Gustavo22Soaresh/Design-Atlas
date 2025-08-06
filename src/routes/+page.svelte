@@ -61,9 +61,9 @@
 	   <AtlTextArea disabled={true} resizable={false} />
 
 		<AtlLabel
-			label="Default/Error/Success Non-Resizable Custom Size Text Area"
+			label="Default/Error/Success Non-Resizable Custom and Auto Size Text Area"
 		/>
-		<AtlTextArea status={textAreaStatus} resizable={false} height={100} width={150} />
+		<AtlTextArea status={textAreaStatus} resizable={false} height={100} width={150} autosize={true}/>
 		<AtlButton on:click={handleChangeStatus}>Change Status</AtlButton>
 	</div>
 </div>
