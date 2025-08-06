@@ -1,102 +1,91 @@
-<script>
-// Importa funções do ciclo de vida do Svelte
-import { onMount, onDestroy } from 'svelte';
+<script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
 
-// Controla a visibilidade da tooltip
-let tooltipVisible = false;
+	let tooltipVisible: boolean = false;
 
-// Gera um ID único para associar a tooltip ao elemento de disparo
-let tooltipId = `atl-tooltip-${Math.random().toString(36).slice(2, 8)}`;
+	const tooltipId: string = `atl-tooltip-${Math.random().toString(36).slice(2, 8)}`;
 
-// Flag para identificar se o evento é de toque (touch) em dispositivos móveis
-let isTouch = false;
+	let isTouch: boolean = false;
 
-// Texto exibido na tooltip (propriedade exportada)
-export let text = '';
-// Direção da tooltip (bottom, top, left, right, etc.)
-export let direction = 'bottom';
+	export let text: string = '';
+	export let direction:
+		| 'top'
+		| 'top-start'
+		| 'top-end'
+		| 'bottom'
+		| 'bottom-start'
+		| 'bottom-end'
+		| 'left'
+		| 'left-start'
+		| 'left-end'
+		| 'right'
+		| 'right-start'
+		| 'right-end' = 'bottom';
 
-// Referência ao elemento que dispara a tooltip
-let triggerEl;
+	let triggerEl: HTMLElement;
 
-// Exibe a tooltip
-function showTooltip() {
-	tooltipVisible = true;
-}
-
-// Esconde a tooltip
-function hideTooltip() {
-	tooltipVisible = false;
-}
-
-// Esconde a tooltip ao pressionar ESC
-function onKeyDown(event) {
-	if (event.key === 'Escape') {
-		hideTooltip();
+	function showTooltip() {
+		tooltipVisible = true;
 	}
-}
 
-// Esconde a tooltip ao clicar fora do elemento de disparo
-function onDocumentClick(event) {
-	if (!triggerEl.contains(event.target)) {
-		hideTooltip();
+	function hideTooltip() {
+		tooltipVisible = false;
 	}
-}
 
-// Mostra a tooltip imediatamente em dispositivos touch
-function handleTouchStart() {
-   isTouch = true;
-   showTooltip();
-}
+	function onKeyDown(event: KeyboardEvent) {
+		if (event.key === 'Escape') {
+			hideTooltip();
+		}
+	}
 
-// Não faz nada no touchend, tooltip permanece visível
-function handleTouchEnd() {
-   // tooltip permanece visível
-}
+	function onDocumentClick(event: MouseEvent) {
+		if (!triggerEl.contains(event.target as Node)) {
+			hideTooltip();
+		}
+	}
 
-// Mostra a tooltip ao passar o mouse, se não for touch
-function handleMouseEnter() {
-	if (!isTouch) showTooltip();
-}
+	function handleTouchStart() {
+		isTouch = true;
+		showTooltip();
+	}
 
-// Esconde a tooltip ao sair o mouse, se não for touch
-function handleMouseLeave() {
-	if (!isTouch) hideTooltip();
-}
+	function handleTouchEnd() {
+		
+	}
 
-// Mostra a tooltip ao focar via teclado, se não for touch
-function handleFocus() {
-	if (!isTouch) showTooltip();
-}
+	function handleMouseEnter() {
+		if (!isTouch) showTooltip();
+	}
 
-// Esconde a tooltip ao perder o foco, se não for touch
-function handleBlur() {
-	if (!isTouch) hideTooltip();
-}
+	function handleMouseLeave() {
+		if (!isTouch) hideTooltip();
+	}
 
-// Adiciona/remover listeners de teclado e clique globalmente, apenas no client
-onMount(() => {
-   if (typeof document !== 'undefined') {
-	   document.addEventListener('keydown', onKeyDown);
-	   document.addEventListener('click', onDocumentClick);
-   }
-});
+	function handleFocus() {
+		if (!isTouch) showTooltip();
+	}
 
-onDestroy(() => {
-   if (typeof document !== 'undefined') {
-	   document.removeEventListener('keydown', onKeyDown);
-	   document.removeEventListener('click', onDocumentClick);
-   }
-});
+	function handleBlur() {
+		if (!isTouch) hideTooltip();
+	}
+
+	onMount(() => {
+		if (typeof document !== 'undefined') {
+			document.addEventListener('keydown', onKeyDown);
+			document.addEventListener('click', onDocumentClick);
+		}
+	});
+
+	onDestroy(() => {
+		if (typeof document !== 'undefined') {
+			document.removeEventListener('keydown', onKeyDown);
+			document.removeEventListener('click', onDocumentClick);
+		}
+	});
 </script>
 
-<!--
-Componente Tooltip:
-Envolve o elemento disparador (slot) e exibe a tooltip quando apropriado.
-O slot pode ser qualquer conteúdo (ícone, texto, etc).
--->
-<div class="atl-tooltip" on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
-   <!-- Elemento disparador da tooltip -->
+
+<div class="atl-tooltip" on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave} aria-roledescription="Tooltip">
    <div
 	   class="unstyled-button"
 	   bind:this={triggerEl}
@@ -111,7 +100,6 @@ O slot pode ser qualquer conteúdo (ícone, texto, etc).
 	   <slot />
    </div>
 
-   <!-- Tooltip visível quando tooltipVisible for true -->
    {#if tooltipVisible}
 	   <span
 		   id={tooltipId}
