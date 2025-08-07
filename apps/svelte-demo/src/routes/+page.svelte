@@ -1,11 +1,13 @@
 <script>
-	import AtlButton from '$lib/components/atl-button.svelte';
-	import AtlCheckbox from '$lib/components/atl-checkbox.svelte';
-	import AtlTextInput from '$lib/components/atl-textInput.svelte';
-	import AtlLabel from '$lib/components/atl-label.svelte';
-	import AtlField from '$lib/components/atl-field.svelte';
-	import AtlTooltip from '../lib/components/atl-tooltip.svelte';
-	import AtlTextArea from '$lib/components/atl-textArea.svelte';
+	import {
+		AtlButton,
+		AtlCheckbox,
+		AtlTextInput,
+		AtlLabel,
+		AtlField,
+		AtlTooltip,
+		AtlTextArea
+	} from '@design-atlas/svelte';
 
 	const icons = {
 		info: `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>`,
@@ -35,10 +37,12 @@
 
 <div class="wrapper">
 	<div class="container">
-		<h1>Welcome to your library project</h1>
-		<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
+		<h1>Design Atlas - Svelte Components Demo</h1>
 		<p>
-			Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation
+			This is a demo site showcasing the Svelte components from the @design-atlas/svelte package.
+		</p>
+		<p>
+			Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the SvelteKit documentation
 		</p>
 		<AtlButton>buton</AtlButton>
 		<AtlCheckbox>Checkbox</AtlCheckbox>
@@ -54,20 +58,20 @@
 			<AtlButton>Tooltip Button</AtlButton>
 		</AtlTooltip>
 
-		<AtlLabel
-			label="Default Text Area"
-		/>
-		<AtlTextArea/>
+		<AtlLabel label="Default Text Area" />
+		<AtlTextArea />
 
-		<AtlLabel
-			label="Disabled Non-Resizable Text Area"
-		/>
-	   <AtlTextArea disabled={true} resizable={false} />
+		<AtlLabel label="Disabled Non-Resizable Text Area" />
+		<AtlTextArea disabled={true} resizable={false} />
 
-		<AtlLabel
-			label="Default/Error/Success Non-Resizable Custom and Auto Size Text Area"
+		<AtlLabel label="Default/Error/Success Non-Resizable Custom and Auto Size Text Area" />
+		<AtlTextArea
+			status={textAreaStatus}
+			resizable={false}
+			height={100}
+			width={150}
+			autosize={true}
 		/>
-		<AtlTextArea status={textAreaStatus} resizable={false} height={100} width={150} autosize={true}/>
 		<AtlButton on:click={handleChangeStatus}>Change Status</AtlButton>
 	</div>
 </div>
