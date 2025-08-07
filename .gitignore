@@ -1,4 +1,6 @@
+# Dependencies
 node_modules
+**/node_modules
 
 # Output
 .output
@@ -6,8 +8,16 @@ node_modules
 .netlify
 .wrangler
 /.svelte-kit
+**/.svelte-kit
 /build
+**/build
 /dist
+**/dist
+
+# VitePress
+.vitepress/cache
+**/.vitepress/cache
+**/.vitepress/dist
 
 # OS
 .DS_Store
