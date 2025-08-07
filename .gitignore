@@ -21,7 +21,7 @@ node_modules
 # VitePress
 .vitepress/cache
 **/.vitepress/cache
-**/.vitepress/dist
+**/.vitepress/dist/
 
 # OS
 .DS_Store
