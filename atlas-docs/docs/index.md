@@ -4,13 +4,10 @@ layout: home
 hero:
   name: Atlas
   text: Design System for OpenStreetMap.
-  image:
-    src: /assets/Logo_design.svg
-    alt: Logo do Projeto
   actions:
     - theme: brand
       text: Start using
-      link: /using-atlas/usage.md
+      link: /using-atlas/accessing-atlas.md
     - theme: alt
       text: GitHub
       link: https://github.com/Gustavo22Soaresh/Design-Atlas

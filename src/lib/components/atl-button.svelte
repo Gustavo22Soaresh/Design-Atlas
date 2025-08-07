@@ -10,6 +10,7 @@
 	class={`atl-button ${variant} ${withIcon ? 'with-icon' : ''} ${disabled ? 'disabled' : ''}`}
 	{type}
 	{disabled}
+	on:click
 >
 	{@render children?.()}
 </button>

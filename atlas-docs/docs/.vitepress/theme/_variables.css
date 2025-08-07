@@ -1,0 +1,287 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+ :root {
+
+    /* colors */
+    /* base */
+    --white: #ffffff; 
+    --black: #000000; 
+
+    /* olive */
+    --olive-100: #edf6eb; 
+    --olive-200: #cce4c6; 
+    --olive-300: #a6d19c; 
+    --olive-400: #82bf71; 
+    --olive-500: #57814c; 
+    --olive-600: #3f5c39; 
+    --olive-700: #293f25; 
+
+    /* green */
+    --green-100: #e5f6ed; 
+    --green-200: #d4ffe6; 
+    --green-300: #8df0bd; 
+    --green-400: #5fc390; 
+    --green-500: #078745; 
+    --green-600: #056c37; 
+    --green-700: #04522a; 
+
+    /* blue */
+    --blue-100: #e2eafd; 
+    --blue-200: #b8cbf7; 
+    --blue-300: #90adee; 
+    --blue-400: #4b82ff; 
+    --blue-500: #0b4ad8; 
+    --blue-600: #06256d; 
+    --blue-700: #041b4e; 
+
+    /* indigo gray */
+    --indigo-gray-100: #f0f2fa; 
+    --indigo-gray-200: #d6dcf1; 
+    --indigo-gray-300: #a0afdf; 
+    --indigo-gray-400: #7092ff; 
+    --indigo-gray-500: #5872c7; 
+    --indigo-gray-600: #3a5297; 
+    --indigo-gray-700: #243045; 
+
+    /* yelow */
+    --yellow-100: #fdf3d2; 
+    --yellow-200: #ffeba8; 
+    --yellow-300: #ffde89; 
+    --yellow-400: #ffdd6d; 
+    --yellow-500: #ffbf0f; 
+    --yellow-600: #b7910d; 
+    --yellow-700: #745b08; 
+    --orange-100: #fff5ea; 
+    --orange-200: #ffddbf; 
+    --orange-300: #ffcb90; 
+    --orange-400: #ffb662; 
+    --orange-500: #ff8800; 
+    --orange-600: #e47a00; 
+    --orange-700: #8f4d00; 
+
+    /* red */
+    --red-100: #ffefef; 
+    --red-200: #ffd2d2; 
+    --red-300: #ff9090; 
+    --red-400: #ff5252; 
+    --red-500: #e02d2d; 
+    --red-600: #b52424; 
+    --red-700: #8a1b1b; 
+
+    /* pink */
+    --pink-100: #ffeef9; 
+    --pink-200: #fed0ed; 
+    --pink-300: #fa8bcf; 
+    --pink-400: #f759b9; 
+    --pink-500: #f31f9f; 
+    --pink-600: #b50372; 
+    --pink-700: #8c0157; 
+
+    /* purple */
+    --purple-100: #f9f0ff; 
+    --purple-200: #efd3fe; 
+    --purple-300: #d199f9; 
+    --purple-400: #af59f1; 
+    --purple-500: #9a34ed; 
+    --purple-600: #6615aa; 
+    --purple-700: #47067d; 
+
+    /* brown */
+    --brown-100: #f5f3f2; 
+    --brown-200: #f4eae6; 
+    --brown-300: #a5928c; 
+    --brown-400: #75574f; 
+    --brown-500: #703021; 
+    --brown-600: #4c251b; 
+    --brown-700: #2f0c01; 
+
+    /* gray */
+    --gray-100: #f4f4f4; 
+    --gray-200: #e8e9ea; 
+    --gray-300: #bebebe; 
+    --gray-400: #7c7c7c; 
+    --gray-500: #4c4c4c; 
+    --gray-600: #242424; 
+    --gray-700: #141415; 
+
+    /* dimension */
+    --dimension-4: 0.25rem;
+    --dimension-8: 0.5rem;
+    --dimension-12: 0.75rem;
+    --dimension-16: 1rem;
+    --dimension-20: 1.25rem;
+    --dimension-24: 1.5rem;
+    --dimension-28: 1.75rem;
+    --dimension-32: 2rem;
+    --dimension-36: 2.25rem;
+    --dimension-40: 2.5rem;
+    --dimension-44: 2.75rem;
+    --dimension-48: 3rem;
+    --dimension-52: 3.25rem;
+    --dimension-56: 3.5rem;
+    --dimension-60: 3.75rem;
+    --dimension-64: 4rem;
+    --dimension-68: 4.25rem;
+    --dimension-72: 4.5rem;
+    --dimension-76: 4.75rem;
+    --dimension-80: 5rem;
+    --dimension-88: 5.5rem;
+    --dimension-96: 6rem;
+    --dimension-104: 6.5rem;
+    --dimension-112: 7rem;
+    --dimension-120: 7.5rem;
+    --dimension-128: 8rem;
+    --dimension-144: 9rem;
+    --dimension-160: 10rem;
+    --dimension-176: 11rem;
+    --dimension-192: 12rem;
+    --dimension-208: 13rem;
+    --dimension-224: 14rem;
+    --dimension-240: 15rem;
+    --dimension-256: 16rem;
+    --dimension-272: 17rem;
+    --dimension-288: 18rem;
+    --dimension-304: 19rem;
+    --dimension-320: 20rem;
+    --dimension-336: 21rem;
+    --dimension-352: 22rem;
+    --dimension-368: 23rem;
+    --dimension-384: 24rem;
+    --dimension-400: 25rem;
+    --dimension-416: 26rem;
+    --dimension-432: 27rem;
+    --dimension-448: 28rem;
+    --dimension-480: 30rem;
+    --dimension-512: 32rem;
+    --dimension-544: 34rem;
+    --dimension-576: 36rem;
+    --dimension-600: 37.5rem;
+    --dimension-640: 40rem;
+    --dimension-680: 42.5rem;
+    --dimension-720: 45rem;
+    --dimension-760: 47.5rem;
+    --dimension-800: 50rem;
+    --dimension-872: 54.5rem;
+    --dimension-1024: 64rem;
+    --dimension-1440: 90rem;
+    --dimension-1920: 120rem;
+
+    /* Typograph */
+    /* font family */
+    --font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Lato, Helvetica, Arial, sans-serif;
+
+    /* font weight */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* font size */
+    --font-size-12: var(--dimension-12, 0.75rem);
+    --font-size-16: var(--dimension-16, 1rem);
+    --font-size-20: var(--dimension-20, 1.25rem);
+    --font-size-24: var(--dimension-24, 1.5rem);
+    --font-size-32: var(--dimension-32, 2rem);
+    --font-size-40: var(--dimension-40, 2.5rem);
+    --font-size-48: var(--dimension-48, 3rem);
+    --font-size-60: var(--dimension-60, 3.75rem);
+    --font-size-76: var(--dimension-76, 4.75rem);
+    --font-size-96: var(--dimension-96, 6rem);
+    --font-size-120: var(--dimension-120, 7.5rem);
+
+    /* text case */
+    --text-case-none: none;
+    --text-case-upper: uppercase;
+    --text-case-cap: capitalize;
+    --text-case-lower: lowercase;
+
+    /* text decoration */
+    --text-decoration-none: none;
+    --text-decoration-underline: underline;
+    --text-decoration-line-th: line-through;
+
+    /* paragraph spacing */
+    --paragraph-spacing-body-sm: var(--dimension-12, 0.75rem);
+    --paragraph-spacing-body-md: var(--dimension-16, 1rem);
+
+    /* line-height */
+    --line-height-header: 125%;
+    --line-height-paragraph: 140%;
+    --line-height-label: 125%;
+
+    /* size */
+    --size-8: var(--dimension-8, 0.5rem);
+    --size-12: var(--dimension-12, 0.75rem);
+    --size-16: var(--dimension-16, 1rem);
+    --size-20: var(--dimension-20, 1.25rem);
+    --size-24: var(--dimension-24, 1.5rem);
+    --size-40: var(--dimension-40, 2.5rem);
+    --size-80: var(--dimension-80, 5rem);
+    --size-272: var(--dimension-272, 17rem);
+    --size-304: var(--dimension-304, 19rem);
+    --size-416: var(--dimension-416, 26rem);
+    --size-448: var(--dimension-448, 28rem);
+    --size-480: var(--dimension-480, 30rem);
+    --size-600: var(--dimension-600, 37.5rem);
+    --size-872: var(--dimension-872, 54.5rem);
+    --size-1024: var(--dimension-1024, 64rem);
+
+    /* spacing */
+    --spacing-4: var(--dimension-4, 0.25rem);
+    --spacing-8: var(--dimension-8, 0.5rem);
+    --spacing-12: var(--dimension-12, 0.75rem);
+    --spacing-16: var(--dimension-16, 1rem);
+    --spacing-24: var(--dimension-24, 1.5rem);
+    --spacing-32: var(--dimension-32, 2rem);
+    --spacing-40: var(--dimension-40, 2.5rem);
+    --spacing-64: var(--dimension-64, 4rem);
+    --spacing-96: var(--dimension-96, 6rem);
+
+    /* border radius */
+    --border-radius-4: var(--dimension-4, 0.25rem);
+    --border-radius-8: var(--dimension-8, 0.5rem);
+    --border-radius-16: var(--dimension-16, 1rem);
+    --border-radius-20: var(--dimension-20, 1.25rem);
+    --border-radius-24: var(--dimension-24, 1.5rem);
+    --border-radius-32: var(--dimension-32, 2rem);
+
+    /* border width */
+    --border-width-1: 0.0625rem;
+    --border-width-2: 0.125rem;
+    --border-width-04: 0.025rem;
+
+    /* opacity */
+    --opacity-0: 0;
+    --opacity-10: 0.1;
+    --opacity-15: 0.15;
+    --opacity-30: 0.3;
+    --opacity-50: 0.5;
+    --opacity-80: 0.8;
+    --opacity-100: 1;
+
+    /* cursor*/
+    --cursor-defaulft: default;
+    --cursor-pointer: pointer;
+    --cursor-disable: default;
+    --cursor-text: text;
+    --cursor-not-allowed: not-allowed;
+    --cursor-wait: wait;
+    --cursor-grab: grab;
+    --cursor-grabbing: grabbing;
+    --cursor-ew-resize: ew-resize;
+    --cursor-ns-resize: ns-resize;
+    --cursor-nesw-resize: nesw-resize;
+    --cursor-help: help;
+    --cursor-copy: copy;
+
+    /* shadow box */
+    --shadow-sm: 2px 2px 2px 0 #0000001a;
+    --shadow-md: 0 4px 6px -1px #0000001a;
+    --shadow-lg: 0 10px 15px -3px #0000001a;
+    --shadow-xl: 0 20px 25px -5px #0000001a;
+    --shadow-2xl: 0 25px 50px -12px #00000040;
+    --shadow-inner: inset 0 4px 4px 0 #00000040;
+    
+    }

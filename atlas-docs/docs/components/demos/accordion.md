@@ -44,13 +44,3 @@ The expanded content within the Accordion can include paragraph text, links, ima
 | <kbd>Tab</kbd> | It moves the focus to the next interactive element within the Accordion or to the next Accordion in a group. |
 | <kbd>Shift</kbd> \+ <kbd>Tab</kbd> | It moves the focus to the previous interactive element within the Accordion or to the previous Accordion in a group. |
 | <kbd>Enter</kbd> / <kbd>Space</kbd> | It expands and collapses the Accordion content. |
-
-
-<style>
-  kbd { 
-    border: 1px solid #ccc; 
-    padding: 4px 8px; 
-    border-radius: 4px; 
-    background: #f5f5f5; 
-  }
-</style>

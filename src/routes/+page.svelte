@@ -3,7 +3,6 @@
 	import AtlCheckbox from '$lib/components/atl-checkbox.svelte';
 	import AtlTextInput from '$lib/components/atl-textInput.svelte';
 	import AtlLabel from '$lib/components/atl-label.svelte';
-	import AtlField from '$lib/components/atl-field.svelte';
 </script>
 
 <div class="wrapper">
@@ -22,7 +21,7 @@
 			label="text of the label"
 		/>
 		<AtlTextInput />
-		<AtlField />
+
 	</div>
 </div>
 

@@ -1,10 +1,10 @@
 # Link
 
+A Link navigates the user to another page, view or section, when the user presses it.
+
 ::: warning Working in progress
 This component is still under development. It is not yet available in releases of Atlas.
 :::
-
-A Link navigates the user to another page, view or section, when the user presses it.
 
 ## Overview
 

@@ -1,7 +1,7 @@
 # ADR-03 - Adoption of the class-first approach in CSS
 
 **Date:** 31-05-2025
-**Status:** Proposed
+**Status:** Accepted
 
 ## Context
 

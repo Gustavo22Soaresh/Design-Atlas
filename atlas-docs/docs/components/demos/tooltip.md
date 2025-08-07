@@ -1,10 +1,10 @@
 # Tooltip
 
+A Tooltip is a brief message that shows up when a user hovers over a specific part of the user interface, providing additional information. 
+
 ::: warning Working in progress
 This component is still under development. It is not yet available in releases of Atlas.
 :::
-
-A Tooltip is a brief message that shows up when a user hovers over a specific part of the user interface, providing additional information. 
 
 ## Overview
 

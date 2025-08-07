@@ -1,0 +1,9 @@
+# Contributing icons 
+
+**Atlas** uses the [**Material Symbols**](https://fonts.google.com/icons) library as the official foundation for its icon set. This choice was made due to the wide range of consistent, accessible, and well-documented symbols, developed and maintained by Google. The icons follow the design principles of [Material Design](https://m3.material.io/), which emphasize simple shapes, legibility at various sizes, visual clarity, and adaptability across international contexts.
+
+All icons are vector-based, scalable, and optimized for high-resolution displays. Atlas primarily adopts the [**Rounded**](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded) style, which offers a balance between visual lightness and recognizability. However, other styles such as [**Outlined**](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Outlined), [**Sharp**](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Sharp), or [**Filled**](https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Filled) may also be used depending on contrast, visual weight, or functional context.
+
+The library supports CSS customization (such as color, size, and weight), making it easy to apply in responsive interfaces and reusable components like buttons, menus, or status indicators.
+
+Using Material Symbols also ensures automatic support for reading directions (LTR and RTL), improving accessibility and internationalization. All icons used in Atlas are available in the [official Figma community file](https://www.figma.com/community/file/1035203688168086460) and can be referenced directly by developers via symbol codes in [optimized SVG format](https://github.com/google/material-design-icons).
