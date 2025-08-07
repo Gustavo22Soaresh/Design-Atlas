@@ -1,0 +1,14 @@
+{
+  "name": "@design-atlas/tokens",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./tokens.json",
+  "exports": {
+    ".": "./tokens.json",
+    "./css": "./tokens.css"
+  },
+  "files": [
+    "tokens.json",
+    "tokens.css"
+  ]
+} 

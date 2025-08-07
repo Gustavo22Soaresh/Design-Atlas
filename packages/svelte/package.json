@@ -1,0 +1,23 @@
+{
+  "name": "@design-atlas/svelte",
+  "version": "0.0.1",
+  "type": "module",
+  "svelte": "./index.js",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "svelte": "./index.js"
+    }
+  },
+  "files": [
+    "*.svelte",
+    "index.js",
+    "index.d.ts"
+  ],
+  "peerDependencies": {
+    "svelte": "^5.0.0"
+  },
+  "devDependencies": {
+    "svelte": "^5.0.0"
+  }
+} 
