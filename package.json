@@ -1,6 +1,8 @@
 {
-	"name": "atlas",
+	"name": "design-atlas",
 	"version": "0.0.1",
+	"private": true,
+	"packageManager": "pnpm@8.15.0",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run prepack",
@@ -10,7 +12,10 @@
 		"lint": "eslint . && prettier --check .",
 		"format": "prettier --write .",
 		"docs:dev": "vitepress dev docs",
-		"docs:build": "vitepress build docs"
+		"docs:build": "vitepress build docs",
+		"workspace:dev": "pnpm -r run dev",
+		"workspace:build": "pnpm -r run build",
+		"workspace:lint": "pnpm -r run lint"
 	},
 	"files": [
 		"dist",

@@ -1,0 +1,6 @@
+packages:
+  # Current structure (during transition)
+  - 'atlas-docs'
+  # Future monorepo structure
+  - 'packages/*'
+  - 'apps/*' 

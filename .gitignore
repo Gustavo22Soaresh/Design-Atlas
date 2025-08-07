@@ -2,6 +2,10 @@
 node_modules
 **/node_modules
 
+# pnpm
+.pnpm-store/
+.pnpm-debug.log*
+
 # Output
 .output
 .vercel
