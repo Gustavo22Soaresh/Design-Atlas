@@ -4,10 +4,10 @@
   "private": true,
   "packageManager": "pnpm@8.15.0",
   "scripts": {
-    "workspace:dev": "pnpm -r run dev",
-    "workspace:build": "pnpm -r run build",
-    "workspace:lint": "pnpm -r run lint",
-    "workspace:format": "pnpm -r run format"
+    "docs:dev": "pnpm --filter @design-atlas/docs dev",
+    "docs:build": "pnpm --filter @design-atlas/docs build",
+    "docs:preview": "pnpm --filter @design-atlas/docs preview",
+    "docs:serve": "pnpm --filter @design-atlas/docs serve"
   },
   "devDependencies": {
     "eslint": "^9.18.0",
