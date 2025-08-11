@@ -1,0 +1,5 @@
+{
+  "buildCommand": "pnpm install && pnpm --filter @design-atlas/docs build",
+  "outputDirectory": "apps/docs/.vitepress/dist",
+  "installCommand": "pnpm install"
+}
