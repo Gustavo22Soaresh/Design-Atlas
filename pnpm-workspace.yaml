@@ -1,0 +1,6 @@
+packages:
+  # Current structure (during transition)
+  - 'apps/docs'
+  # Future monorepo structure
+  - 'packages/*'
+  - 'apps/*' 
