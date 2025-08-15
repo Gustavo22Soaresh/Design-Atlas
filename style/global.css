@@ -1,0 +1,300 @@
+@import url(_variables.css);
+@import url(theme.css);
+
+/*reset */
+
+* {
+    margin: 0;
+}
+
+/* Typograph */
+/* Configurar fonte padrão */
+body {
+    font-family: var(--font-family-sans-serif, sans-serif);
+    font-size: var(--font-size-16, 1rem); /* Define o tamanho base */
+    line-height: var(--line-height-paragraph); /* Define a altura da linha base */
+    font-weight: var(--font-weight-regular, 400); /* Define o peso padrão */
+    text-decoration: var(--text-decoration-none);
+}
+
+h1, h2, h3, h4, h5, h6,
+.display-1,
+.display-2,
+.display-3,
+.header-1,
+.header-2,
+.header-3,
+.header-4,
+.header-5, 
+.header-6 {
+    line-height: var(--line-height-header);
+    color: var(--color-emphasized);
+    text-wrap: balance;
+}
+
+
+/* Display styles */
+.display-1 {
+    font-size: var(--font-size-120, 7.5rem);
+}
+
+.display-2 {
+    font-size: var(--font-size-96, 6rem);
+}
+
+.display-3 {
+    font-size: var(--font-size-76, 4.75rem);
+}
+
+/* Headers  styles */
+h1, .header-1 {
+    font-size:  var(--font-size-60, 3.75rem);
+}
+
+h2, .header-2 {
+    font-size: var(--font-size-48, 3rem);
+}
+
+h3, .header-3 {
+    font-size: var(--font-size-40, 2.5rem);
+}
+
+h4, .header-4 {
+    font-size: var(--font-size-32, 2rem);
+}
+
+h5, .header-5 {
+    font-size: var(--font-size-24, 1.5rem);
+}
+
+h6, .header-6 {
+    font-size: var(--font-size-20, 1.25rem);
+}
+
+/* Body styles */
+p, caption,
+.body-lg,
+.body-md,
+.body-sm {
+    line-height: var(--line-height-paragraph);
+    color: var(--color-base);
+    text-wrap: pretty;
+    max-width: 75ch;
+    color: var(--color-base);
+}
+
+.body-lg {
+    font-size: var(--font-size-24, 1.5rem);
+}
+
+p .body-md {
+    font-size: var(--font-size-16, 1rem);
+}
+
+caption, .body-sm {
+    font-size: var(--font-size-12);
+}
+
+label, .label {
+    font-size: var(--font-size-16);
+    color: var(--color-emphasized);
+    line-height: 125%;
+    font-weight: var(--font-weight-semibold);
+
+    span {
+        color: var(--color-base);
+    }
+}
+
+
+/* Utility classes */
+
+/* font weight */
+.regular {
+    font-weight: var(--font-weight-regular, 400);
+}
+
+.semibold {
+    font-weight: var(--font-weight-semibold, 600)
+}
+
+.bold {
+    font-weight: var(--font-weight-bold, 700);
+}
+
+.light {
+    font-weight: var(--font-weight-light, 300);
+}
+
+/* text decoration */
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.text-decoration-underline {
+    text-decoration: var(--text-decoration-underline);
+}
+
+.text-decoration-th {
+    text-decoration: var(--text-decoration-th);
+}
+
+.display-none {
+    display: none;
+}
+
+/* colors */
+.color-base {
+    color: var(--color-base);
+}
+
+.color-subtle {
+    color: var(--color-subtle)
+}
+
+.color-base-hover {
+    color: var(--color-base-hover);
+}
+
+.color-emphasized {
+    color: var(--color-emphasized);
+}
+
+.color-disable {
+    color: var(--color-disable);
+}
+
+.color-accent {
+    color: var(--color-accent);
+}
+
+.color-foreground {
+    color: var(--color-foreground);
+}
+
+.color-inverse {
+    color: var(--color-inverse);
+}
+
+.color-link {
+    color: var(--color-link);
+}
+
+.color-success {
+    color: var(--color-success);
+}
+
+.color-info {
+    color: var(--color-info);
+}
+
+.color-warning {
+    color: var(--color-warning);
+}
+
+.color-error {
+    color: var(--color-error);
+}
+
+/* background colors */
+.bgn-base {
+    background-color: var(--bgn-base);
+}
+
+.bgn-surface {
+    background-color: var(--bgn-surface);
+}
+
+.bgn-disable {
+    background-color: var(--bgn-disable);
+}
+
+.bgn-accent {
+    background-color: var(--bgn-accent);
+}
+
+.bgn-foreground {
+    background-color: var(--bgn-foreground);
+}
+
+.bgn-danger {
+    background-color: var(--bgn-danger);
+}
+
+.bgn-info {
+    background-color: var(--bgn-info);
+}
+
+.bgn-success {
+    background-color: var(--bgn-success);
+}
+
+.bgn-warning {
+    background-color: var(--bgn-warning);
+}
+
+.bgn-error {
+    background-color: var(--bgn-error);
+}
+
+/* border color */
+.border-color-base {
+    border-color: var(--border-color-base);
+}
+
+.border-color-subtle {
+    border-color: var(--border-color-subtle);
+}
+
+.border-color-disable {
+    border-color: var(--border-color-disable);
+}
+
+.border-color-accent {
+    border-color: var(--border-color-accent);
+}
+
+.border-color-focus {
+    border-color: var(--border-color-focus);
+}
+
+.border-color-info {
+    border-color: var(--border-color-info);
+}
+
+.border-color-success {
+    border-color: var(--border-color-success);
+}
+
+.border-color-warning {
+    border-color: var(--border-color-warning);
+}
+
+.border-colo-error {
+    border-color: var(--border-color-error);
+}
+
+/* border stylus */
+.border-style-base {
+    border: var(--border-style-base);
+}
+
+.border-style-accent {
+    border: var(--border-style-accent);
+}
+
+.border-style-focus {
+    border: var(--border-style-focus);
+}
+
+.border-style-active {
+    border: var(--border-style-active);
+}
+
+.border-style-error {
+    border: var(--border-style-error);
+}
+
+.border-style-success {
+    border: var(--border-style-success);
+}
