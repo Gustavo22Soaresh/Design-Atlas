@@ -2,7 +2,7 @@
   "name": "design-atlas",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@8.15.0",
+  "packageManager": "pnpm@10.14.0",
   "scripts": {
     "docs:dev": "pnpm --filter @design-atlas/docs dev",
     "docs:build": "pnpm --filter @design-atlas/docs build",
