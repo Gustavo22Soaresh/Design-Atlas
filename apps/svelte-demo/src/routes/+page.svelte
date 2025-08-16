@@ -6,7 +6,8 @@
 		AtlLabel,
 		AtlField,
 		AtlTooltip,
-		AtlTextArea
+		AtlTextArea,
+		AtlSelect
 	} from '@design-atlas/svelte';
 
 	const icons = {
@@ -20,6 +21,8 @@
 
 	// Estado inicial do AtlTextArea
 	let textAreaStatus = 'default';
+
+	let selected;
 
 	// Função para gerar IDs únicos
 	function generateId() {
@@ -73,6 +76,16 @@
 			autosize={true}
 		/>
 		<AtlButton on:click={handleChangeStatus}>Change Status</AtlButton>
+		
+		<AtlSelect 
+			label="Select" 
+			required={true} 
+			options={[{"text":"Hello"},{"text":"World"}]} 
+			display_func={o => o.text} 
+			bind:value={selected} 
+			icon={icons.person}
+		/>
+		
 	</div>
 </div>
 
