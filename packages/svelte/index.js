@@ -8,3 +8,4 @@ export { default as AtlTextArea } from './atl-textArea.svelte';
 export { default as AtlTextInput } from './atl-textInput.svelte';
 export { default as AtlTooltip } from './atl-tooltip.svelte';
 export { default as AtlSelect } from './atl-select.svelte';
+export { default as AtlRadio } from './atl-radio.svelte';

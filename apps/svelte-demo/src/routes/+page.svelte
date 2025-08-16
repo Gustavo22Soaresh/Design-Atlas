@@ -7,8 +7,10 @@
 		AtlField,
 		AtlTooltip,
 		AtlTextArea,
-		AtlSelect
+		AtlSelect,
+		AtlRadio
 	} from '@design-atlas/svelte';
+	import { text } from '@sveltejs/kit';
 
 	const icons = {
 		info: `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>`,
@@ -18,6 +20,21 @@
 		close: `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>`,
 		person: `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>`
 	};
+
+	let radioValue;
+	let precheckedRadioValue = 'prechecked';
+
+	const options = [{
+		key:'osm',
+		text:'Open Street Map',
+	}, {
+		key:'option1',
+		text:'Opção 1',
+	}, {
+		key:'disableOption',
+		text:'Disabled Option',
+		disabled: true,
+	}]
 
 	// Estado inicial do AtlTextArea
 	let textAreaStatus = 'default';
@@ -30,11 +47,14 @@
 	}
 
 	function handleChangeStatus() {
-		console.log('Status atual:', textAreaStatus);
 		if (textAreaStatus === 'default') textAreaStatus = 'error';
 		else if (textAreaStatus === 'error') textAreaStatus = 'success';
 		else textAreaStatus = 'default';
-		console.log('Novo status:', textAreaStatus);
+	}
+
+	function printvalue() {
+		radioValue = 
+		console.log(radioValue);
 	}
 </script>
 
@@ -85,7 +105,8 @@
 			bind:value={selected} 
 			icon={icons.person}
 		/>
-		
+		<AtlRadio {options} optional={true} label='Radio Buttons' bind:value={radioValue}/>
+		<AtlRadio label='Disabled' options={[{key:'prechecked', text:'Prechecked Radio', disabled: true,}]} bind:value={precheckedRadioValue}/>
 	</div>
 </div>
 
