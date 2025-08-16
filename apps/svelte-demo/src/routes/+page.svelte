@@ -79,20 +79,21 @@
 			type="required"
 			label="text of the label"
 		/>
+		
 		<AtlTextInput />
+
 		<AtlField />
+
 		<AtlTooltip direction="right" text="This is a tooltip from right.">
 			{@html icons.info}
 		</AtlTooltip>
 
-		<AtlLabel label="Default Text Area" />
-		<AtlTextArea />
+		<AtlTextArea label='Default Text Area'/>
 
-		<AtlLabel label="Disabled Non-Resizable Text Area" />
-		<AtlTextArea disabled={true} resizable={false} />
+		<AtlTextArea label="Disabled Non-Resizable Text Area" disabled={true} resizable={false} />
 
-		<AtlLabel label="Default/Error/Success Non-Resizable Custom and Auto Size Text Area" />
 		<AtlTextArea
+			label="Default/Error/Success Non-Resizable Custom and Auto Size Text Area"
 			status={textAreaStatus}
 			resizable={false}
 			height={100}
