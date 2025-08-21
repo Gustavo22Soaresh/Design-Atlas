@@ -1,16 +1,22 @@
 #!/usr/bin/env node
 
 import { execSync } from "child_process";
-import { mkdtempSync, rmSync, writeFileSync, mkdirSync } from "fs";
+import { mkdtempSync, rmSync, writeFileSync, mkdirSync, readFileSync } from "fs";
 import { join } from "path";
 import { tmpdir } from "os";
 
 const packageName = "@design-atlas/svelte";
 const tempDir = mkdtempSync(join(tmpdir(), "smoke-svelte-"));
+
+// Read actual package version from package.json
+const packageJsonPath = join(process.cwd(), "packages/svelte/package.json");
+const packageJson = JSON.parse(readFileSync(packageJsonPath, "utf8"));
+const packageVersion = packageJson.version;
+
 const tarballPath = join(
   process.cwd(),
   "dist-tarballs",
-  `${packageName.replace("@", "").replace("/", "-")}-0.1.0.tgz`
+  `${packageName.replace("@", "").replace("/", "-")}-${packageVersion}.tgz`
 );
 
 try {
