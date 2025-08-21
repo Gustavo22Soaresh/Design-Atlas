@@ -104,9 +104,10 @@ Version 0.1.0 will be considered complete when:
 4. **CI/CD Automation with Changesets**
    - [x] Install and initialize @changesets/cli
    - [x] Configure package.json scripts
-   - [x] Set up GitHub Actions workflow
+   - [x] Set up GitHub Actions workflow with Trusted Publishing (OIDC)
    - [x] Configure smoke tests in CI pipeline
    - [x] Test Changesets workflow locally
+   - [x] Remove dependency on NPM_TOKEN secrets
 
 4. **Post-Publish Verification**
    - [ ] Verify packages appear on npmjs.com

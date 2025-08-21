@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  id-token: write
+
 jobs:
   release:
     name: Release
@@ -20,6 +24,7 @@ jobs:
         with:
           node-version: '22'
           cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -35,13 +40,13 @@ jobs:
       - name: Run smoke tests
         run: pnpm run smoke:all
 
-      - name: Create Release Pull Request or Publish
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: pnpm release
-          title: "chore: version packages"
-          commit: "chore: version packages"
+      - name: Version packages
+        run: pnpm changeset version
+
+      - name: Build packages again
+        run: pnpm -r build
+
+      - name: Publish packages
+        run: pnpm changeset publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
