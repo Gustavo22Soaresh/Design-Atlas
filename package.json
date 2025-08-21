@@ -12,12 +12,18 @@
     "docs:dev": "pnpm --filter @design-atlas/docs dev",
     "docs:build": "pnpm --filter @design-atlas/docs build",
     "docs:preview": "pnpm --filter @design-atlas/docs preview",
-    "docs:serve": "pnpm --filter @design-atlas/docs serve"
+    "docs:serve": "pnpm --filter @design-atlas/docs serve",
+    "pack:all": "pnpm -r build && mkdir -p dist-tarballs && pnpm --filter @design-atlas/react pack --pack-destination dist-tarballs && pnpm --filter @design-atlas/svelte pack --pack-destination dist-tarballs && pnpm --filter @design-atlas/tokens pack --pack-destination dist-tarballs",
+    "smoke:react": "node scripts/smoke/react.mjs",
+    "smoke:svelte": "node scripts/smoke/svelte.mjs",
+    "smoke:tokens": "node scripts/smoke/tokens.mjs",
+    "smoke:all": "pnpm pack:all && pnpm smoke:react && pnpm smoke:svelte && pnpm smoke:tokens"
   },
   "devDependencies": {
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "prettier": "^3.4.2",
-    "@changesets/cli": "^2.27.0"
+    "@changesets/cli": "^2.27.0",
+    "rimraf": "^5.0.0"
   }
 }
