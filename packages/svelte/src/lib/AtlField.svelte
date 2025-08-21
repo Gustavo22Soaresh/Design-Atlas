@@ -1,7 +1,7 @@
 <script>
-	import AtlAlert from './atl-alert.svelte';
-	import AtlLabel from './atl-label.svelte';
-	import AtlTextInput from './atl-textInput.svelte';
+	import AtlAlert from './AtlAlert.svelte';
+import AtlLabel from './AtlLabel.svelte';
+import AtlTextInput from './AtlTextInput.svelte';
 
 	// Label
 	export let label = '';

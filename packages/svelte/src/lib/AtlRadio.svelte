@@ -1,5 +1,5 @@
 <script lang="ts">
-    import AtlLabel from "./atl-label.svelte";
+    import AtlLabel from "./AtlLabel.svelte";
 
     // Radio variables
     export let options = [];
