@@ -10,7 +10,7 @@
     "build": "pnpm -r build",
     "clean": "pnpm -r clean",
     "changeset": "changeset",
-    "version": "changeset version",
+    "version-packages": "changeset version",
     "release": "pnpm -r build && changeset publish",
     "docs:dev": "pnpm --filter @design-atlas/docs dev",
     "docs:build": "pnpm --filter @design-atlas/docs build",

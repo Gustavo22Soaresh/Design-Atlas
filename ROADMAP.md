@@ -46,17 +46,17 @@ This milestone focuses on establishing the basic foundation for npm publishing w
 
 #### NPM Publishing
 
-- [ ] Configure npm publishing workflow
-- [ ] Configure package.json files for publishing
+- [x] Configure npm publishing workflow
+- [x] Configure package.json files for publishing
 - [x] Set up proper versioning strategy
-- [ ] Test package installation and usage
+- [x] Test package installation and usage
 
 #### Release Process
 
-- [ ] Create release checklist
+- [x] Create release checklist
 - [x] Configure semantic versioning
-- [ ] Test packages in external projects
-- [ ] Prepare release announcement
+- [x] Test packages in external projects
+- [x] Prepare release announcement
 
 ### 🔍 Pre-Release Validation
 
@@ -87,19 +87,26 @@ Version 0.1.0 will be considered complete when:
 ### Immediate Actions Required
 
 1. **NPM Authentication & Publishing Setup**
-   - [ ] Login to npm registry
-   - [ ] Verify package names are available
-   - [ ] Test npm publish with --dry-run flag
+   - [x] Login to npm registry
+   - [x] Verify package names are available
+   - [x] Test npm publish with --dry-run flag
 
 2. **Package Validation**
-   - [ ] Verify all dist/ folders contain correct files
-   - [ ] Test package installation locally
-   - [ ] Validate package.json exports and main fields
+   - [x] Verify all dist/ folders contain correct files
+   - [x] Test package installation locally
+   - [x] Validate package.json exports and main fields
 
 3. **Publishing Order**
-   - [ ] Publish `@design-atlas/tokens` first (dependency)
-   - [ ] Publish `@design-atlas/react`
-   - [ ] Publish `@design-atlas/svelte`
+   - [x] Publish `@design-atlas/tokens` first (dependency)
+   - [x] Publish `@design-atlas/react`
+   - [x] Publish `@design-atlas/svelte`
+
+4. **CI/CD Automation with Changesets**
+   - [x] Install and initialize @changesets/cli
+   - [x] Configure package.json scripts
+   - [x] Set up GitHub Actions workflow
+   - [x] Configure smoke tests in CI pipeline
+   - [x] Test Changesets workflow locally
 
 4. **Post-Publish Verification**
    - [ ] Verify packages appear on npmjs.com
