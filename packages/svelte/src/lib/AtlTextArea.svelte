@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import AtlLabel from './atl-label.svelte';
+    import AtlLabel from './AtlLabel.svelte';
     type Status = 'default' | 'success' | 'error';
     type Resize = 'none' | 'vertical' | 'horizontal' | 'both';
     export let value: string = '';

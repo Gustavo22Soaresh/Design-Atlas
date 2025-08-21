@@ -1,5 +1,5 @@
 <script>
-    import AtlLabel from "./atl-label.svelte";
+    import AtlLabel from "./AtlLabel.svelte";
 
     // Select variables
     export let options = [];

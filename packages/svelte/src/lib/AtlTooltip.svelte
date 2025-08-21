@@ -85,7 +85,7 @@
 </script>
 
 
-<div class="atl-tooltip" on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave} aria-roledescription="Tooltip">
+<div class="atl-tooltip" on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave} role="group" aria-roledescription="Tooltip">
    <div
 	   class="unstyled-button"
 	   bind:this={triggerEl}
