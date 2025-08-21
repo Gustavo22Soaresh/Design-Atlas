@@ -23,10 +23,11 @@
     "smoke:all": "pnpm pack:all && pnpm smoke:react && pnpm smoke:svelte && pnpm smoke:tokens"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.0",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "prettier": "^3.4.2",
-    "@changesets/cli": "^2.27.0",
+    "prettier-plugin-svelte": "^3.4.0",
     "rimraf": "^5.0.0"
   }
 }

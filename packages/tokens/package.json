@@ -1,6 +1,6 @@
 {
   "name": "@design-atlas/tokens",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Design tokens for Design Atlas design system",
   "type": "module",
   "main": "dist/tokens.json",
