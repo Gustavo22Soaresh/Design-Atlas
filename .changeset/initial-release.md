@@ -1,7 +1,7 @@
 ---
-"@design-atlas/tokens": major
-"@design-atlas/react": major
-"@design-atlas/svelte": major
+"@design-atlas/tokens": minor
+"@design-atlas/react": minor
+"@design-atlas/svelte": minor
 ---
 
 Initial release of Design Atlas packages
