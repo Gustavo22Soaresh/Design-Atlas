@@ -1,0 +1,59 @@
+@import url(_variables.css);
+
+:root {
+    color-scheme: light dark;
+    /* text and icons colors */
+    --color-base: light-dark(var(--gray-500), var(--gray-300)); /* Default color of all text styles and icons */
+    --color-subtle: light-dark(var(--gray-400), var(--gray-400)); /* - Subtle text/icons that shouldn't be distracting (e.g. subtitles, descriptions) */
+    --color-base-hover: light-dark(var(--gray-600), var(--gray-100)); /* - Tertiary  buttons text/icons on hover */
+    --color-emphasized: light-dark(var(--indigo-gray-700), var(--base-white)); /* Emphasized text/icons (e.g., Headings) */
+    --color-disable: light-dark(var(--gray-300), var(--gray-500)); /* - Use it for disabled text/icons in interactive elements (e.g. input, form items). */
+    --color-accent: light-dark(var(--olive-500), var(--olive-400)); /* - Default color of primary text elements */
+    --color-accent-hover: light-dark(var(--olive-600), var(--olive-300)); /* - Hover color of primary text elements */
+    --color-accent-active: light-dark(var(--olive-700), var(--olive-500)); /* - Active color for accents text */
+    --color-foreground: light-dark(var(--olive-200), var(--olive-700)); /* Icons on hover */
+    --color-inverse: light-dark(var(--white), var(--gray-600)); /* Text on darker backgrounds */
+    --color-link: light-dark(var(--blue-500), var(--indigo-gray-400)); /* Links */
+    --color-link-active: light-dark(var(--blue-600), var(--blue-500)); /* - active links */
+    --color-link-visited: light-dark(var(--purple-600), var(--purple-300)); /* - Visited links */
+    --color-success: light-dark(var(--green-500), var(--green-400)); /* Success messages and icons */
+    --color-info: light-dark(var(--blue-500), var(--indigo-gray-400)); /* - Icons in info messages */
+    --color-warning: light-dark(var(--orange-700), var(--yellow-400)); /* - Icons in warning messages */
+    --color-error: light-dark(var(--red-500), var(--red-400)); /* Error messages and icons */
+
+    /* background colors */
+    --bgn-base: light-dark(var(--gray-200), var(--gray-700)); /* Base background */
+    --bgn-surface: light-dark(var(--white), var(--gray-600)); /* Surface background */
+    --bgn-surface-hover: light-dark(var(--gray-200), var(--gray-700)); /* Hovered menu options, active tertiary buttons */
+    --bgn-disable: light-dark(var(--gray-300), var(--gray-500)); /* - Disabled background of interactive elements (e.g. button) */
+    --bgn-accent: light-dark(var(--olive-500), var(--olive-400)); /* - Default accent backgrounds */
+    --bgn-accent-hover: light-dark(var(--olive-600), var(--olive-300)); /* - Hover accent backgrounds */
+    --bgn-accent-active: light-dark(var(--olive-700), var(--olive-500)); /* - Active accent backgrounds */
+    --bgn-foreground: light-dark(var(--olive-200), var(--olive-700)); /* Foreground background */
+    --bgn-danger: light-dark(var(--red-500), var(--red-400)); /* - Default danger/error backgrounds */
+    --bgn-danger-hover: light-dark(var(--red-600), var(--red-500, )); /* - Hover on danger/error interactive backgrounds */
+    --bgn-danger-active: light-dark(var(--red-700), var(--red-600)); /* - Active danger/error backgrounds (e.g. active selected-error checkbox) */
+    --bgn-info: light-dark(var(--blue-100), var(--blue-700));  /* - Info feedback background */
+    --bgn-success: light-dark(var(--olive-100), var(--olive-700)); /* - Success feedback background */
+    --bgn-warning: light-dark(var(--orange-100), var(--orange-700)); /* - Warning feedback backgorund */
+    --bgn-error: light-dark(var(--red-200), var(--brown-600)); /* - Error feedbacks backgorund */
+
+    /* border colors */
+    --border-color-base: var(--color-base); /* Default for interactive elements, dialogs, menus */
+    --border-color-subtle: var(--color-disable); /* - Dividers and thumbnail borders */
+    --border-color-disable: var(--color-disable); /* - Disabled form item borders */
+    --border-color-accent: var(--color-accent); /* - Border color of accent elements */
+    --border-color-focus: var(--color-accent);  /* - Base focus color */
+    --border-color-info: var(--color-info);  /* - Notice messages border */
+    --border-color-success: var(--color-success); /* - Success messages border - Success forms */
+    --border-color-warning: var(--color-warning); /* - Warning messages border */
+    --border-color-error: var(--color-error); 
+
+    /* border styles */
+    --border-style-base: var(--border-width-04, 0.025rem) solid var(--border-color-base);
+    --border-style-accent: var(--border-width-1, 0.0625rem) solid var(--border-color-accent);
+    --border-style-focus: var(--border-width-2, 0.0625rem) solid var(--border-color-accent);
+    --border-style-active: var(--border-width-1, 0.0625rem) solid var(--border-color-accent);
+    --border-style-error: var(--border-width-1, 0.0625rem) solid var(--border-color-error);
+    --border-style-success: var(--border-width-1, 0.0625rem) solid var(--border-color-success);
+  }

@@ -1,19 +1,19 @@
 {
-  "name": "@design-atlas/svelte",
+  "name": "@design-atlas/react",
   "version": "0.1.0",
-  "description": "Svelte components for Design Atlas design system",
+  "description": "React components for Design Atlas design system",
   "type": "module",
-  "svelte": "dist/index.js",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "svelte": "./dist/index.js",
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
+  "sideEffects": false,
   "files": [
     "dist",
     "README.md",
@@ -26,19 +26,25 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "build": "node build.js",
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap",
     "clean": "rimraf dist",
     "prepack": "pnpm build"
   },
   "peerDependencies": {
-    "svelte": "^4 || ^5"
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "devDependencies": {
-    "svelte": "^5.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "typescript": "^5.0.0",
+    "tsup": "^8.0.0",
     "rimraf": "^5.0.0"
   },
   "keywords": [
-    "svelte",
+    "react",
     "components",
     "design-system",
     "ui"
@@ -48,6 +54,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OSMBrasil/design-atlas.git",
-    "directory": "packages/svelte"
+    "directory": "packages/react"
   }
 }
