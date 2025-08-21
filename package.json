@@ -4,6 +4,11 @@
   "private": true,
   "packageManager": "pnpm@10.14.0",
   "scripts": {
+    "build": "pnpm -r build",
+    "clean": "pnpm -r clean",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm -r build && changeset publish",
     "docs:dev": "pnpm --filter @design-atlas/docs dev",
     "docs:build": "pnpm --filter @design-atlas/docs build",
     "docs:preview": "pnpm --filter @design-atlas/docs preview",
@@ -12,6 +17,7 @@
   "devDependencies": {
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
-    "prettier": "^3.4.2"
+    "prettier": "^3.4.2",
+    "@changesets/cli": "^2.27.0"
   }
 }

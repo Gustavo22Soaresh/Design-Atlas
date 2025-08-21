@@ -1,14 +1,43 @@
 {
   "name": "@design-atlas/tokens",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "description": "Design tokens for Design Atlas design system",
   "type": "module",
-  "main": "./tokens.json",
+  "main": "dist/tokens.json",
+  "module": "dist/tokens.json",
   "exports": {
-    ".": "./tokens.json",
-    "./css": "./tokens.css"
+    ".": "./dist/tokens.json",
+    "./css": "./dist/tokens.css"
   },
   "files": [
-    "tokens.json",
-    "tokens.css"
-  ]
-} 
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "node scripts/generate-css.js",
+    "clean": "rimraf dist",
+    "prepack": "pnpm build"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.0"
+  },
+  "keywords": [
+    "design-tokens",
+    "css-variables",
+    "design-system"
+  ],
+  "author": "Design Atlas Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OSMBrasil/design-atlas.git",
+    "directory": "packages/tokens"
+  }
+}
