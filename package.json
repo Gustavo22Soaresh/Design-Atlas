@@ -2,16 +2,31 @@
   "name": "design-atlas",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@8.15.0",
+  "packageManager": "pnpm@10.14.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
+    "build": "pnpm -r build",
+    "clean": "pnpm -r clean",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm -r build && changeset publish",
     "docs:dev": "pnpm --filter @design-atlas/docs dev",
     "docs:build": "pnpm --filter @design-atlas/docs build",
     "docs:preview": "pnpm --filter @design-atlas/docs preview",
-    "docs:serve": "pnpm --filter @design-atlas/docs serve"
+    "docs:serve": "pnpm --filter @design-atlas/docs serve",
+    "pack:all": "pnpm -r build && mkdir -p dist-tarballs && pnpm --filter @design-atlas/react pack --pack-destination dist-tarballs && pnpm --filter @design-atlas/svelte pack --pack-destination dist-tarballs && pnpm --filter @design-atlas/tokens pack --pack-destination dist-tarballs",
+    "smoke:react": "node scripts/smoke/react.mjs",
+    "smoke:svelte": "node scripts/smoke/svelte.mjs",
+    "smoke:tokens": "node scripts/smoke/tokens.mjs",
+    "smoke:all": "pnpm pack:all && pnpm smoke:react && pnpm smoke:svelte && pnpm smoke:tokens"
   },
   "devDependencies": {
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
-    "prettier": "^3.4.2"
+    "prettier": "^3.4.2",
+    "@changesets/cli": "^2.27.0",
+    "rimraf": "^5.0.0"
   }
 }

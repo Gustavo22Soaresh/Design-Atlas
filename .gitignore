@@ -27,6 +27,12 @@ node_modules
 .DS_Store
 Thumbs.db
 
+# Cursor
+.cursorrules
+**/.cursorrules
+.cursor/
+**/.cursor/
+
 # Env
 .env
 .env.*
@@ -36,3 +42,6 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Smoke test artifacts
+dist-tarballs/
