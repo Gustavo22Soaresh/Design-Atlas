@@ -70,3 +70,5 @@ jobs:
       - name: Publish packages
         if: ${{ github.ref == 'refs/heads/chore/ci-auth-diagnostics' }}
         run: pnpm changeset publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
