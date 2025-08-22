@@ -37,6 +37,17 @@ jobs:
       - name: Update npm
         run: npm install -g npm@latest
 
+      - name: Debug NODE_AUTH_TOKEN
+        run: |
+          if [ -z "$NODE_AUTH_TOKEN" ]; then
+            echo "❌ NODE_AUTH_TOKEN is empty or not set"
+            exit 1
+          else
+            echo "✅ NODE_AUTH_TOKEN is present (length: ${#NODE_AUTH_TOKEN})"
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
       - name: Configure npm auth for @design-atlas
         run: |
           echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
