@@ -4,4 +4,4 @@
 "@design-atlas/react": patch
 ---
 
-npm packages setup
+dev docs

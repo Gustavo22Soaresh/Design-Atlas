@@ -38,6 +38,10 @@ We want the OpenStreetMap Design System to be a useful tool for everyone. Here a
 3. Submit a pull request with your changes.
 4. Follow our contribution guidelines to ensure your contribution is accepted.
 
+### Developer Resources
+- [Development Setup](docs/development.md) - Get started with local development
+- [Release Process](docs/releases.md) - How to create and publish releases
+
 ## Maintainers
 Atlas is maintained by a diverse group of designers and developers, with support from the **University of Brasília**, the **Federal University of Espírito Santo**, and the OpenStreetMap volunteer community.
 
