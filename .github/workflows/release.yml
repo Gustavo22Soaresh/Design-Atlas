@@ -38,7 +38,6 @@ jobs:
         run: npm install -g npm@latest
 
       - name: Configure npm auth for @design-atlas
-        if: ${{ secrets.NODE_AUTH_TOKEN != '' }}
         run: |
           echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
           echo "@design-atlas:registry=https://registry.npmjs.org" >> ~/.npmrc
@@ -47,7 +46,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
       - name: Verify npm authentication
-        if: ${{ secrets.NODE_AUTH_TOKEN != '' }}
         run: |
           npm whoami
           npm ping
