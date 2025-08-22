@@ -1,6 +1,6 @@
 {
   "name": "@design-atlas/react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React components for Design Atlas design system",
   "type": "module",
   "main": "dist/index.cjs",
