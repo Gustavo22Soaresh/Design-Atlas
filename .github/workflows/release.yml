@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - chore/ci-auth-diagnostics
+      - main
   pull_request:
   workflow_dispatch:
 
@@ -37,24 +37,11 @@ jobs:
       - name: Update npm
         run: npm install -g npm@latest
 
-      - name: Debug NODE_AUTH_TOKEN
-        run: |
-          if [ -z "$NODE_AUTH_TOKEN" ]; then
-            echo "❌ NODE_AUTH_TOKEN is empty or not set"
-            exit 1
-          else
-            echo "✅ NODE_AUTH_TOKEN is present (length: ${#NODE_AUTH_TOKEN})"
-          fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-
       - name: Configure npm auth for @design-atlas
         run: |
           echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
           echo "@design-atlas:registry=https://registry.npmjs.org" >> ~/.npmrc
           echo "always-auth=true" >> ~/.npmrc
-          echo "Debug: .npmrc contents:"
-          cat ~/.npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
@@ -75,15 +62,15 @@ jobs:
         run: pnpm run smoke:all
 
       - name: Version packages
-        if: ${{ github.ref == 'refs/heads/chore/ci-auth-diagnostics' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: pnpm changeset version
 
       - name: Build packages again
-        if: ${{ github.ref == 'refs/heads/chore/ci-auth-diagnostics' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: pnpm -r build
 
       - name: Publish packages
-        if: ${{ github.ref == 'refs/heads/chore/ci-auth-diagnostics' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: pnpm changeset publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
