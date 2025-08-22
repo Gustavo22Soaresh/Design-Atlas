@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - chore/ci-auth-diagnostics
   pull_request:
   workflow_dispatch:
 
@@ -62,13 +62,13 @@ jobs:
         run: pnpm run smoke:all
 
       - name: Version packages
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.ref == 'refs/heads/chore/ci-auth-diagnostics' }}
         run: pnpm changeset version
 
       - name: Build packages again
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.ref == 'refs/heads/chore/ci-auth-diagnostics' }}
         run: pnpm -r build
 
       - name: Publish packages
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.ref == 'refs/heads/chore/ci-auth-diagnostics' }}
         run: pnpm changeset publish
