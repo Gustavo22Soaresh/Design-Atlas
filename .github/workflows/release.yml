@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -30,6 +32,25 @@ jobs:
           node-version-file: ".nvmrc"
           cache: "pnpm"
           registry-url: "https://registry.npmjs.org"
+          scope: "@design-atlas"
+
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - name: Configure npm auth for @design-atlas
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
+          echo "@design-atlas:registry=https://registry.npmjs.org" >> ~/.npmrc
+          echo "always-auth=true" >> ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
+      - name: Verify npm authentication
+        run: |
+          npm whoami
+          npm ping
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -41,12 +62,15 @@ jobs:
         run: pnpm run smoke:all
 
       - name: Version packages
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: pnpm changeset version
 
       - name: Build packages again
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: pnpm -r build
 
       - name: Publish packages
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: pnpm changeset publish
         env:
-          NPM_CONFIG_PROVENANCE: true
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
